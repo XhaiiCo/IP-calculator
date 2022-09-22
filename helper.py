@@ -123,6 +123,3 @@ def start(ip, masque):
               "=>", toPointer(SR(toBinary(ip), toBinary(masque))))
         print("Broadcast :     ", broadcast(toBinary(ip), toBinary(masque)),
               "=>", toPointer(broadcast(toBinary(ip), toBinary(masque))))
-
-
-start(input("IP : "), input("Masque : "))

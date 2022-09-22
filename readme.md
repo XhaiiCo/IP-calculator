@@ -3,8 +3,9 @@ Groupe 11
 # TODO
 
 - ## Q1
-  - [ ] Déterminer la classe d'une IP (classfull)
-  - [ ] Faire un dictionnaire pour les classfull (nb reseaux max dans la class) puis mettre dans la DB
+  - [ ] Déterminer la classe d'une IP (classfull): David
+  - [x] Faire un dictionnaire pour les classfull : David
+  - [] Si db: mettre dictionnaire dans la db
 - ## Q3
   - [ ] Déterminer si une ip appartient à un au réseau ou pas (boolean)
 - ## Q4
