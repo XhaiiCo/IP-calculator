@@ -11,4 +11,8 @@ Groupe 11
 - ## Q4
   - [ ] Déterminer si 2 IP sont dans le même réseau (ip1, ip2, masque1, masque2)
 - ## connexion
-  - [ ] Connexion au programmer
+  - [ ] Connexion au programme
+
+## question
+
+Si on passe une ip 0.0.0.0 ou 255.255.255.255 est ce que on laisse ou on mets une erreur
