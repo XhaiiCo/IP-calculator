@@ -78,7 +78,7 @@ def toPointer(binary):
 
     return result[:-1]
 
-
+# Donne l'adresse du sous réseau
 def SR(ip, masque):
     result = ""
 
@@ -93,7 +93,7 @@ def SR(ip, masque):
 
     return result
 
-
+# Donne l'adresse broadcast du réseau
 def broadcast(ip, masque):
     result = ""
 
