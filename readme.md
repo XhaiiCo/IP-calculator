@@ -10,3 +10,5 @@ Groupe 11
   - [x] Déterminer si une ip appartient à un au réseau ou pas (param : (adrIP, masque, adrReseau); return : boolean)
 - ## Q4
   - [ ] Déterminer si 2 IP sont dans le même réseau (ip1, ip2, masque1, masque2)
+- ## connexion
+  - [ ] Connexion au programmer
