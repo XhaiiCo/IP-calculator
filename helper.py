@@ -78,58 +78,5 @@ def toPointer(binary):
 
     return result[:-1]
 
-# Donne l'adresse du sous réseau en binaire
-# params: ip en binaire et masque en binaire
-
-
-def SR(ip, masque):
-    result = ""
-
-    for i in range(len(ip)):
-        if(ip[i] == '.'):
-            result += '.'
-
-        elif(masque[i] == '1'):
-            result += ip[i]
-        else:
-            result += '0'
-
-    return result
-
-# Donne l'adresse broadcast du réseau en binaire
-# params: id en binaire, masque en binaire
-
-
-def broadcast(ip, masque):
-    result = ""
-
-    for i in range(len(ip)):
-        if(ip[i] == '.'):
-            result += '.'
-
-        elif(masque[i] == '1'):
-            result += ip[i]
-        else:
-            result += '1'
-
-    return result
-
-
-def start(ip, masque):
-
-    print("=" * 20)
-    print("IP is", verifIP(ip))
-    print("Masque is", verifMasque(masque))
-    if(verifIP(ip) and verifMasque(masque)):
-        print("=" * 20)
-
-        print("IP binary is    ", toBinary(ip))
-        print("Masque binary is", toBinary(masque))
-        print("Sous-réseaux :  ", SR(toBinary(ip), toBinary(masque)),
-              "=>", toPointer(SR(toBinary(ip), toBinary(masque))))
-        print("Broadcast :     ", broadcast(toBinary(ip), toBinary(masque)),
-              "=>", toPointer(broadcast(toBinary(ip), toBinary(masque))))
-
-
 def formaterNombre(num):
     return f'{num:,}'

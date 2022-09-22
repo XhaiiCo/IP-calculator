@@ -9,11 +9,13 @@ import console as c
 
 def findClasse(ip):
     for classe in classfull.tab:
-        minFirst = classe["ipMin"].split(".")[0]
-        maxFirst = classe["ipMax"].split(".")[0]
-        ipFirst = ip.split(".")[0]
+        minFirst = (int) (classe["ipMin"].split(".")[0])
+        maxFirst = (int) (classe["ipMax"].split(".")[0])
+        ipFirst = (int) (ip.split(".")[0])
         if(ipFirst >= minFirst and ipFirst <= maxFirst):
             return classe
+    
+    return None
 
 
 def afficherClasse(classe):
@@ -24,4 +26,4 @@ def afficherClasse(classe):
     print("----------------------")
 
 
-afficherClasse(findClasse(c.demanderIP()))
+# afficherClasse(findClasse(c.demanderIP()))
