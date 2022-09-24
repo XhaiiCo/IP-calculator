@@ -19,4 +19,4 @@ def isIpInNetwork(addressIp, maskAddress, networkIp) :
 
     return False
 
-print(isIpInNetwork("192.168.230.255", "255.255.192.0", "192.168.192.255"))
+# print(isIpInNetwork("192.168.230.255", "255.255.192.0", "192.168.192.255"))
