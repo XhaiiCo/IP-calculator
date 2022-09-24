@@ -8,3 +8,7 @@ def demanderIP():
         userIP = input("Veuillez entrer une IP correct>")
 
     return userIP
+
+def affiche(tab):
+    for item in tab:
+        print(item["title"], " : ", item["value"])
