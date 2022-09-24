@@ -12,3 +12,11 @@ def demanderIP():
 def affiche(tab):
     for item in tab:
         print(item["title"], " : ", item["value"])
+
+def afficherClasse(classe):
+    print("Classe", classe["classe"])
+    print("----------------------")
+    print("   ", h.formaterNombre(classe["reseaux"]), "reseaux")
+    print("   ", h.formaterNombre(classe["hotes"]), "hotes")
+    print("----------------------")
+

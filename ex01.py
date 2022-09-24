@@ -17,13 +17,4 @@ def findClasse(ip):
     
     return None
 
-
-def afficherClasse(classe):
-    print("Classe", classe["classe"])
-    print("----------------------")
-    print("   ", h.formaterNombre(classe["reseaux"]), "reseaux")
-    print("   ", h.formaterNombre(classe["hotes"]), "hotes")
-    print("----------------------")
-
-
-# afficherClasse(findClasse(c.demanderIP()))
+# c.afficherClasse(findClasse(c.demanderIP()))

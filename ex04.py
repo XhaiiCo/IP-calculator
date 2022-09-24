@@ -37,4 +37,4 @@ mask1 = "255.255.128.0"
 ip2 =   "192.168.192.0"
 mask2 = "255.255.192.0"
 
-print(compareAddressAndNetwork(ip1, mask1, ip2, mask2))
+# print(compareAddressAndNetwork(ip1, mask1, ip2, mask2))
