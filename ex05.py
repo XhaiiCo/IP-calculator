@@ -72,8 +72,6 @@ def nbMaxSR(nbHoteDemande, maskDepart) :
         return "Il n'est pas possible de réaliser une découpe classique sur base d'IP car le nombre de bit nécessaire à faire la découpe est insuffisant"
 
 
-
-
 Ip = h.toBinary("192.168.0.255")
 mask = h.toBinary("255.255.255.128")
 
