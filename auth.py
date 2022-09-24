@@ -1,5 +1,5 @@
 import bcrypt
-import environment as env
+import sqlite3 
 
 def hashPassword(password):
 
@@ -12,8 +12,12 @@ def hashPassword(password):
     return hashed
 
 def login(login, password):
-    if(login != env.login): return False
+    conn = sqlite3.connect("database.db")
+    c = conn.cursor()
+    row = c.execute("SELECT * from users where users.login = ?", [login]).fetchone()
     
-    password = password.encode("utf-8")
-    if bcrypt.checkpw(password, env.password.encode("utf-8")): return True
+    if row == None: return False
+    
+    hashedPassword = row[1].encode("utf-8")
+    if bcrypt.checkpw(password.encode("utf-8"), hashedPassword): return True
     return False

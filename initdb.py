@@ -12,4 +12,4 @@ c.execute('''
 ''')
 
 c.execute("INSERT INTO users VALUES (?,?)", (env.login, env.password))
-
+conn.commit()
