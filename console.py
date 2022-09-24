@@ -20,3 +20,12 @@ def afficherClasse(classe):
     print("   ", h.formaterNombre(classe["hotes"]), "hotes")
     print("----------------------")
 
+def afficherMainMenu():
+    print("---------------------------------------------------")
+    print("MENU")
+    print("---------------------------------------------------")
+    print("Trouver la classe....................1")
+    print("Broadcast, reseau, sous-reseau.......2")
+    print("IP dans reseau.......................3")
+    print("Exercice 4...........................4")
+    print("Exercice 5...........................5")
