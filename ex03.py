@@ -3,7 +3,6 @@
 # test si les x(donné par le masque) premiers chifres de l'ip et du network sont égaux
 
 import helper as h
-import math
 
 def isIpInNetwork(addressIp, maskAddress, networkIp) :
     if not h.verifMasque(maskAddress) : return False
@@ -20,4 +19,4 @@ def isIpInNetwork(addressIp, maskAddress, networkIp) :
 
     return False
 
-print(isIpInNetwork("192.168.225.111", "255.255.224.0", "192.168.192.255"))
+# print(isIpInNetwork("192.168.225.111", "255.255.224.0", "192.168.192.255"))
