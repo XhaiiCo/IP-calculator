@@ -13,8 +13,20 @@ def findClasse(ip):
         maxFirst = (int) (classe["ipMax"].split(".")[0])
         ipFirst = (int) (ip.split(".")[0])
         if(ipFirst >= minFirst and ipFirst <= maxFirst):
-            return classe
+            result = [{
+                "title": "Classe",
+                "value": classe["classe"]
+            },
+            {
+                "title": "Nombre de reseaux",
+                "value": classe["reseaux"]
+            },
+            {
+                "title": "Nombre d'hotes",
+                "value": classe["hotes"]
+            }]
+            return result 
     
     return None
 
-# c.afficherClasse(findClasse(c.demanderIP()))
+# c.affiche(findClasse(c.demanderIP()))

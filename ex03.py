@@ -3,6 +3,7 @@
 # test si les x(donné par le masque) premiers chifres de l'ip et du network sont égaux
 
 import helper as h
+import console as c
 
 def isIpInNetwork(addressIp, maskAddress, networkIp) :
     if not h.verifMasque(maskAddress) : return False
@@ -15,8 +16,8 @@ def isIpInNetwork(addressIp, maskAddress, networkIp) :
     srNetIp = h.SR(networkIpBinary, h.toBinary(maskAddress))
 
     if (srIp == srNetIp) :
-        return True
+        return [{"title": "L'IP est dans le réseau", "value": None}] 
 
-    return False
+    return [{"title": "L'IP n''est pas dans le réseau", "value": None}] 
 
-# print(isIpInNetwork("192.168.225.111", "255.255.224.0", "192.168.192.255"))
+c.affiche(isIpInNetwork("192.168.0.0", "255.255.225.0", "193.168.0.0"))
