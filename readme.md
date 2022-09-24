@@ -17,3 +17,4 @@ Groupe 11
 
 - Si on passe une ip 0.0.0.0 ou 255.255.255.255 est ce que on laisse ou on mets une erreur
 - Pour l'ex2 il faut donner l'adresse de broadcast du réseau pas du sous réseau
+- Question 3: dans le même réseau mais pas sous-réseau
