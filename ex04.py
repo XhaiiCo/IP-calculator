@@ -16,21 +16,25 @@ def isIpInNetwork(addressIp1, maskAddress1, addressIp2) :
     return False
 
 def compareAddressAndNetwork(ip1, mask1, ip2, mask2) :
+    str = ""
     if (isIpInNetwork(ip1, mask1, ip2)) :
-        print("La première IP considère que la deuxième IP est dans son réseau")
+        str += "La première IP considère que la deuxième IP est dans son réseau\n"
     else :
-        print("La première IP ne considère pas que la deuxième IP est dans son réseau")
+        str += "La première IP ne considère pas que la deuxième IP est dans son réseau\n"
 
     if (isIpInNetwork(ip2, mask2, ip1)) :
-        print("La deuxième IP considère que la première IP est dans son réseau")
+        str += "La deuxième IP considère que la première IP est dans son réseau"
     else :
-        print("La deuxième IP ne considère pas que la première IP est dans son réseau")
+        str += "La deuxième IP ne considère pas que la première IP est dans son réseau"
+        
+    return str
 
+    
 
-ip1 =   "192.168.128.255"
+ip1 =   "192.168.128.0"
 mask1 = "255.255.128.0"
 
-ip2 =   "192.168.192.255"
+ip2 =   "192.168.192.0"
 mask2 = "255.255.192.0"
 
-compareAddressAndNetwork(ip1, mask1, ip2, mask2)
+print(compareAddressAndNetwork(ip1, mask1, ip2, mask2))
