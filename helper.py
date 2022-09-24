@@ -47,6 +47,10 @@ def verifMasque(masque):
             return False
         last = int(i)
 
+    # Biggest subnet mask is 255.255.255.252
+    if splited_masque[3] > 252 :
+        return False
+
     return True
 
 
