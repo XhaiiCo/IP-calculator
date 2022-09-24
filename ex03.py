@@ -2,21 +2,22 @@
 # compte le nombre de 1 du masque de l'ip et ajoute les .
 # test si les x(donné par le masque) premiers chifres de l'ip et du network sont égaux
 
-import helper
+import helper as h
 import math
 
 def isIpInNetwork(addressIp, maskAddress, networkIp) :
-    if not helper.verifMasque(maskAddress) : return False
-    if not (helper.verifIP(addressIp) and helper.verifIP(networkIp)) : return False
+    if not h.verifMasque(maskAddress) : return False
+    if not (h.verifIP(addressIp) and h.verifIP(networkIp)) : return False
 
-    nb1InMask = helper.toBinary(maskAddress).count("1") # Compte le nombre de 1 pour comparer les ips
-    nb1InMask += math.trunc(nb1InMask / 8) # Compte le nomre de .
-    addressIpBinary = helper.toBinary(addressIp)    # Binaire
-    maskAddressBinary = helper.toBinary(networkIp)  # Binaire
+    addressIpBinary = h.toBinary(addressIp)
+    networkIpBinary = h.toBinary(networkIp)
 
-    if addressIpBinary[0:nb1InMask] == maskAddressBinary[0:nb1InMask] :
+    srIp = h.SR(addressIpBinary, h.toBinary(maskAddress))
+    srNetIp = h.SR(networkIpBinary, h.toBinary(maskAddress))
+
+    if (srIp == srNetIp) :
         return True
 
     return False
 
-# print(isIpInNetwork("192.168.230.255", "255.255.192.0", "192.168.192.255"))
+print(isIpInNetwork("192.168.225.111", "255.255.224.0", "192.168.192.255"))
