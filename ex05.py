@@ -32,17 +32,20 @@ def calculNbHoteTot(maskDepart) :
 def nbMaxHote(nbSRDemande, maskDepart) :
     # nombre de 0 qu'il y a dans le masque
     nb0 = maskDepart.count("0") 
-    print(nb0)
+    if (2**nb0)-1 < nbSRDemande :
+        return "non"
+    print("nb0", nb0)
+
     # s'il y moins de trois 0 dans le masque, il n'y a pas assez de place pour faire des sous réseaux
-    if nb0 < 3 :
-        return "Il n'est pas possible de réaliser une découpe classique sur base du nombre de sous réseaux car il n'y a pas assez de bit disponible dans le masque pour pouvoir faire la découpe"
+    # if nb0 < 3 :
+    #     return "Il n'est pas possible de réaliser une découpe classique sur base du nombre de sous réseaux car il n'y a pas assez de bit disponible dans le masque pour pouvoir faire la découpe"
     
     (n, nbSr) = nbSR(nb0, nbSRDemande)
     
-    if nbSr == -1:
+    if nbSr == -1 or nb0 - n <= 0:
         return "Il n'est pas possible de réaliser une découpe classique sur base du nombre de sous réseaux car le nombre de sous réseaux maximal est inférieur au nombre de sous réseau demandé"
 
-    print(nbSr)
+    print("n", n)
 
     return "Il est possible de réaliser une découpe classique, le nombre maximal d'hôtes par sous réseau est de : " + str(2**(nb0-n)-2)
 
@@ -52,7 +55,7 @@ def nbSR(nb0, nbSRDemande):
         if(nbSr >= nbSRDemande):
             return (n, nbSr)
     
-    return -1 ;
+    return (-1, -1) ;
 
 # 5.3
 def nbMaxSR(nbHoteDemande, maskDepart) :
@@ -87,9 +90,9 @@ def nbMaxSR(nbHoteDemande, maskDepart) :
         return "Il n'est pas possible de réaliser une découpe classique sur base d'IP car le nombre de bit nécessaire à faire la découpe est insuffisant"
 
 
-Ip = h.toBinary("50.0.0.0")
-mask = h.toBinary("255.255.255.0")
-nbSr = 8
+Ip = h.toBinary("212.51.7.0")
+mask = h.toBinary("255.255.255.248")
+nbSr = 4
 nbHote = 2
-
+print("mask", mask)
 c.affiche(init(nbSr, nbHote, Ip, mask))
