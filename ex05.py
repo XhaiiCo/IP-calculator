@@ -32,20 +32,14 @@ def calculNbHoteTot(maskDepart) :
 def nbMaxHote(nbSRDemande, maskDepart) :
     # nombre de 0 qu'il y a dans le masque
     nb0 = maskDepart.count("0") 
-    if (2**nb0)-1 < nbSRDemande :
-        return "non"
-    print("nb0", nb0)
-
     # s'il y moins de trois 0 dans le masque, il n'y a pas assez de place pour faire des sous réseaux
-    # if nb0 < 3 :
-    #     return "Il n'est pas possible de réaliser une découpe classique sur base du nombre de sous réseaux car il n'y a pas assez de bit disponible dans le masque pour pouvoir faire la découpe"
-    
+    if nb0 < 2 :
+        return "Il n'est pas possible de réaliser une découpe classique sur base du nombre de sous réseaux car il n'y a pas assez de bit disponible dans le masque pour pouvoir faire la découpe"
+   
     (n, nbSr) = nbSR(nb0, nbSRDemande)
     
     if nbSr == -1 or nb0 - n <= 0:
         return "Il n'est pas possible de réaliser une découpe classique sur base du nombre de sous réseaux car le nombre de sous réseaux maximal est inférieur au nombre de sous réseau demandé"
-
-    print("n", n)
 
     return "Il est possible de réaliser une découpe classique, le nombre maximal d'hôtes par sous réseau est de : " + str(2**(nb0-n)-2)
 
@@ -53,7 +47,7 @@ def nbSR(nb0, nbSRDemande):
     for n in range(0, nb0):
         nbSr = (2**n)-1
         if(nbSr >= nbSRDemande):
-            return (n, nbSr)
+            return (n, nbSr)#n : nombre de bits pour la numérotation des SRs et nbSr le nombre de sous réseau possible
     
     return (-1, -1) ;
 
@@ -65,7 +59,7 @@ def nbMaxSR(nbHoteDemande, maskDepart) :
     nb0 = maskDepart.count("0") 
 
     # s'il y moins de trois 0 dans le masque, il n'y a pas assez de place pour faire des sous réseaux
-    if nb0 < 3 :
+    if nb0 < 2 :
         return "Il n'est pas possible de réaliser une découpe classique sur base d'IP car il n'y a pas assez de bit disponible dans le masque pour pouvoir faire la découpe"
 
     # prend l'exposant de 2 supérieur au nb d'hotes demandé pour la passer en binaire afin de connaitre le nombre de bits nécessaire
@@ -91,8 +85,8 @@ def nbMaxSR(nbHoteDemande, maskDepart) :
 
 
 Ip = h.toBinary("212.51.7.0")
-mask = h.toBinary("255.255.255.248")
-nbSr = 4
+mask = h.toBinary("255.255.0.0")
+nbSr = 7
 nbHote = 2
 print("mask", mask)
 c.affiche(init(nbSr, nbHote, Ip, mask))
