@@ -1,23 +1,27 @@
 # ex5
 
 import helper as h
+import console as c
 def init(nbSRDemande, nbHoteParSR, Ip, maskDepart) :
-    result = []
+    result = [
+        {# 5.1
+            "title": "Nombre d'hotes total",
+            "value": calculNbHoteTot(maskDepart)
+        }
+    ]
 
-    # 5.1
-    result.append(calculNbHoteTot(Ip, maskDepart))
+    # # 5.2
+    # result.append(nbMaxHote(nbSRDemande, maskDepart))
 
-    # 5.2
-    result.append(nbMaxHote(nbSRDemande, maskDepart))
-
-    # 5.3
-    result.append(nbMaxSR(nbHoteParSR, maskDepart))
+    # # 5.3
+    # result.append(nbMaxSR(nbHoteParSR, maskDepart))
 
     return result
 
 # 5.1
-def calculNbHoteTot(Ip, maskDepart) :
-    adresseSR = h.SR(Ip, maskDepart)
+def calculNbHoteTot(maskDepart) :
+    nbZero = maskDepart.count("0")
+    return (2**nbZero)-2
 
 # 5.2
 def nbMaxHote(nbSRDemande, maskDepart) :
@@ -73,6 +77,6 @@ def nbMaxSR(nbHoteDemande, maskDepart) :
 
 
 Ip = h.toBinary("192.168.0.255")
-mask = h.toBinary("255.255.255.128")
+mask = h.toBinary("255.255.240.0")
 
-print(init(16, 16, Ip, mask))
+c.affiche(init(16, 16, Ip, mask))
