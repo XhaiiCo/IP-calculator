@@ -1,4 +1,3 @@
-import math
 import helper as h
 import ex03
 
@@ -20,12 +19,8 @@ def compareAddressAndNetwork(ip1, mask1, ip2, mask2) :
 
 ip1 =   "192.168.192.0"
 mask1 = "255.255.128.0"
-# print(h.toBinary(ip1))
-# print(h.toBinary(mask1))
 
 ip2 =   "192.168.128.0"
 mask2 = "255.255.192.0"
-# print(h.toBinary(ip2))
-# print(h.toBinary(mask2))
 
 # print(compareAddressAndNetwork(ip1, mask1, ip2, mask2))
