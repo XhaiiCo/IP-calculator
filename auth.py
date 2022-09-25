@@ -14,10 +14,10 @@ def hashPassword(password):
 def login(login, password):
     conn = sqlite3.connect("database.db")
     c = conn.cursor()
-    row = c.execute("SELECT * from users where users.login = ?", [login]).fetchone()
+    row = c.execute("SELECT password from users where users.login = ?", [login]).fetchone()
     
     if row == None: return False
     
-    hashedPassword = row[1].encode("utf-8")
+    hashedPassword = row[0].encode("utf-8")
     if bcrypt.checkpw(password.encode("utf-8"), hashedPassword): return True
     return False
