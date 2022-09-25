@@ -2,14 +2,16 @@
 
 # Press Maj+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+from tkinter import Tk
+
+import app
 from database.initdb import init_db
 from model.ex01 import ex01
 from model.ex02 import ex02
 from model.ex03 import ex03
 from model.ex04 import compareAddressAndNetwork
 from model.ex05 import ex05
-from util import console as cons, auth
-from view import login
+from util import console as cons
 
 
 def test_ex_01():
@@ -48,7 +50,7 @@ def test_ex_05():
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     init_db()
-    login.view()
+    app.start()
 
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
