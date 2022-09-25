@@ -1,8 +1,9 @@
-import helper as h
+from util import helper
+
 
 def demanderIP():
     userIP = input("Entrer votre IP>")
-    while(h.verifIP(userIP) != True):
+    while(helper.verifIP(userIP) != True):
         print("IP incorrect")
         userIP = input("Veuillez entrer une IP correct>")
 

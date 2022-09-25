@@ -1,9 +1,11 @@
 # ex5
+# ip et maskDepart en binaire
+from util import helper as h
 
-import helper as h
-import console as c
-# ip et maskDepart en binaire 
-def init(nbSRDemande, nbHoteParSR, Ip, maskDepart) :
+
+def ex05(nbSRDemande, nbHoteParSR, Ip, maskDepart) :
+    Ip = h.toBinary(Ip)
+    maskDepart = h.toBinary(maskDepart)
     result = [
         {# 5.1
             "title": "Nombre d'hotes total",
@@ -78,11 +80,3 @@ def nbMaxSR(nbHoteDemande, maskDepart) :
         return "Le nombre maximal de sous réseaux pouvant être créés est de : " + str(nbSRPossible)
     else :
         return "Il n'est pas possible de réaliser une découpe classique sur base d'IP car le nombre de bit nécessaire à faire la découpe est insuffisant"
-
-
-Ip = h.toBinary("212.51.7.0")
-mask = h.toBinary("255.255.0.0")
-nbSr = 31
-nbHote = 1200
-print("mask", mask)
-c.affiche(init(nbSr, nbHote, Ip, mask))
