@@ -4,7 +4,7 @@ from tkinter import ttk
 
 
 
-def logIn():
+def logIn(*args):
     log = str(login.get())
     passw = str(pwd.get())
     if auth.login(log, passw):
