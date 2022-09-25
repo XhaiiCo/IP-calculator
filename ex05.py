@@ -2,6 +2,7 @@
 
 import helper as h
 import console as c
+# ip et maskDepart en binaire 
 def init(nbSRDemande, nbHoteParSR, Ip, maskDepart) :
     result = [
         {# 5.1
@@ -18,7 +19,7 @@ def init(nbSRDemande, nbHoteParSR, Ip, maskDepart) :
 
     return result
 
-# 5.1
+# 5.1 maskDepart en binaire
 def calculNbHoteTot(maskDepart) :
     nbZero = maskDepart.count("0")
     return (2**nbZero)-2
