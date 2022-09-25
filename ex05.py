@@ -8,6 +8,10 @@ def init(nbSRDemande, nbHoteParSR, Ip, maskDepart) :
         {# 5.1
             "title": "Nombre d'hotes total",
             "value": calculNbHoteTot(maskDepart)
+        },
+        {# 5.2
+            "title": nbMaxHote(nbSRDemande, maskDepart),
+            "value": None
         }
     ]
 
@@ -28,21 +32,27 @@ def calculNbHoteTot(maskDepart) :
 def nbMaxHote(nbSRDemande, maskDepart) :
     # nombre de 0 qu'il y a dans le masque
     nb0 = maskDepart.count("0") 
-
+    print(nb0)
     # s'il y moins de trois 0 dans le masque, il n'y a pas assez de place pour faire des sous réseaux
     if nb0 < 3 :
         return "Il n'est pas possible de réaliser une découpe classique sur base du nombre de sous réseaux car il n'y a pas assez de bit disponible dans le masque pour pouvoir faire la découpe"
+    
+    (n, nbSr) = nbSR(nb0, nbSRDemande)
+    
+    if nbSr == -1:
+        return "Il n'est pas possible de réaliser une découpe classique sur base du nombre de sous réseaux car le nombre de sous réseaux maximal est inférieur au nombre de sous réseau demandé"
 
-    # calcul du nombre de sous réseau disponible avec le nombre de 0
-    nbSRDispo = 2**(nb0-2) # -2 car il faut au moins trois 0 pour faire des SR
-    # print(nbSRDispo)
+    print(nbSr)
 
-    if (nbSRDispo >= nbSRDemande) :
-        # calcul du nombre d'hote par SR
-        # print(2**nbSRDemande-2)
-        return "Il est possible de réaliser une découpe classique, le nombre maximal d'hôtes par sous réseau est de : " + str(2**nbSRDemande-2)
+    return "Il est possible de réaliser une découpe classique, le nombre maximal d'hôtes par sous réseau est de : " + str(2**(nb0-n)-2)
 
-    return "Il n'est pas possible de réaliser une découpe classique sur base du nombre de sous réseaux car le nombre de sous réseaux maximal est inférieur au nombre de sous réseau demandé"
+def nbSR(nb0, nbSRDemande):
+    for n in range(0, nb0):
+        nbSr = (2**n)-1
+        if(nbSr >= nbSRDemande):
+            return (n, nbSr)
+    
+    return -1 ;
 
 # 5.3
 def nbMaxSR(nbHoteDemande, maskDepart) :
@@ -77,7 +87,9 @@ def nbMaxSR(nbHoteDemande, maskDepart) :
         return "Il n'est pas possible de réaliser une découpe classique sur base d'IP car le nombre de bit nécessaire à faire la découpe est insuffisant"
 
 
-Ip = h.toBinary("192.168.0.255")
-mask = h.toBinary("255.255.240.0")
+Ip = h.toBinary("50.0.0.0")
+mask = h.toBinary("255.255.255.0")
+nbSr = 8
+nbHote = 2
 
-c.affiche(init(16, 16, Ip, mask))
+c.affiche(init(nbSr, nbHote, Ip, mask))
