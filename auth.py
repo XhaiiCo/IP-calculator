@@ -15,7 +15,7 @@ def login(login, password):
     conn = sqlite3.connect("database.db")
     c = conn.cursor()
     row = c.execute("SELECT password from users where users.login = ?", [login]).fetchone()
-    
+    conn.close()
     if row == None: return False
     
     hashedPassword = row[0].encode("utf-8")
