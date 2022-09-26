@@ -3,7 +3,7 @@
 # Press Maj+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
-import app
+from view import app
 from model.ex01 import ex01
 from model.ex02 import ex02
 from model.ex03 import ex03

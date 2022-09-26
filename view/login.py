@@ -2,7 +2,7 @@ from tkinter import *
 from tkinter import ttk
 
 from util import auth
-import app
+from view import app
 
 
 def view(window):
