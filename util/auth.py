@@ -17,7 +17,8 @@ def login(login, password):
     c = conn.cursor()
     row = c.execute("SELECT password from users where users.login = ?", [login]).fetchone()
     conn.close()
-    if row == None: return False
+    if row is None:
+        return False
 
     hashedPassword = row[0].encode("utf-8")
     if bcrypt.checkpw(password.encode("utf-8"), hashedPassword): return True
