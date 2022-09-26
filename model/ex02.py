@@ -9,6 +9,7 @@ def ex02(ip, masque):
     # trouve la classe en fonction de l'ip (classfull)
     classe = ex01.findClasse(ip)
     if classe:
+        if classe["classe"] == "D" or classe["classe"] == "E" : return
         # adresse de broadcast
         result.append({
             "title": "Adresse de broadcast du réseau",
