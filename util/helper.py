@@ -42,6 +42,9 @@ def verifMasque(masque):
         if(int(i) < 0 or int(i) > 255):
             return False
 
+        if int(i) not in [0, 128, 192, 224, 240, 248, 252, 255]:
+            return False
+
         # check if the current element is greater than the last element
         if(int(i) > last):
             return False

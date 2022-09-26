@@ -32,7 +32,7 @@ def nbMaxHote(nbSRDemande, maskDepart) :
     # nombre de 0 qu'il y a dans le masque
     nb0 = maskDepart.count("0") 
     # s'il y moins de trois 0 dans le masque, il n'y a pas assez de place pour faire des sous réseaux
-    if nb0 < 2 :
+    if nb0 < 3 :
         return "Il n'est pas possible de réaliser une découpe classique sur base du nombre de sous réseaux car il n'y a pas assez de bit disponible dans le masque pour pouvoir faire la découpe"
    
     (n, nbSr) = nbSR(nb0, nbSRDemande)
@@ -56,7 +56,7 @@ def nbMaxSR(nbHoteDemande, maskDepart) :
     nb0 = maskDepart.count("0") 
 
     # s'il y moins de deux 0 dans le masque, il n'y a pas assez de place pour faire des sous réseaux
-    if nb0 < 2 :
+    if nb0 < 3 :
         return "Il n'est pas possible de réaliser une découpe classique sur base d'IP car il n'y a pas assez de bit disponible dans le masque pour pouvoir faire la découpe"
 
     # prend l'exposant de 2 supérieur au nb d'hotes demandé pour la passer en binaire afin de connaitre le nombre de bits nécessaire
