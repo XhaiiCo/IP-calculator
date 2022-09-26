@@ -1,6 +1,5 @@
 from util import helper
 
-
 def demanderIP():
     userIP = input("Entrer votre IP>")
     while(helper.verifIP(userIP) != True):
@@ -10,12 +9,13 @@ def demanderIP():
     return userIP
 
 def affiche(tab):
-    if not tab: return
+    if not tab:
+        return
     for item in tab:
         result = item["title"]
         if item["value"]:
             result += " : " + str(item["value"])
-        
+
         print(result)
 
 def afficherMainMenu():
