@@ -19,8 +19,8 @@ def test_ex_01():
 
 
 def test_ex_02():
-    ip = "10.2.33.123"
-    masque = "255.255.255.0"
+    ip = "224.2.33.123"
+    masque = "255.255.255.252"
 
     cons.affiche(ex02(ip, masque))
 
@@ -49,8 +49,8 @@ def test_ex_05():
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    init_db()
-    app.start()
+    #app.start()
+    test_ex_01()
 
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/

@@ -10,6 +10,7 @@ def demanderIP():
     return userIP
 
 def affiche(tab):
+    if not tab: return
     for item in tab:
         result = item["title"]
         if item["value"]:

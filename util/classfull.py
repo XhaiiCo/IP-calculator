@@ -21,6 +21,22 @@ tab = [
         "reseaux": 16777216,
         "hotes": 254,
         "ipMin": "192.0.0.0",
-        "ipMax": "224.255.255.255",
+        "ipMax": "223.255.255.255",
+    },
+    {
+        "classe": "D (multicast)",
+        "masque" : "/",
+        "reseaux": "/",
+        "hotes": "/",
+        "ipMin": "224.0.0.0",
+        "ipMax": "239.0.0.0",
+    },
+    {
+        "classe": "E (expériences protocoles)",
+        "masque": "/",
+        "reseaux": "/",
+        "hotes": "/",
+        "ipMin": "240.0.0.0",
+        "ipMax": "255.255.255.255"
     }
 ]

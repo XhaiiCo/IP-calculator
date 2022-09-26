@@ -17,16 +17,18 @@ def findClasse(ip):
 
 def ex01(ip):
     classe = findClasse(ip)
-    result = [{
-        "title": "Classe",
-        "value": classe["classe"]
-    },
-    {
-        "title": "Nombre de reseaux",
-        "value": classe["reseaux"]
-    },
-    {
-        "title": "Nombre d'hotes",
-        "value": classe["hotes"]
-    }]
-    return result
+    if classe:
+        result = [{
+            "title": "Classe",
+            "value": classe["classe"]
+        },
+        {
+            "title": "Nombre de reseaux",
+            "value": classe["reseaux"]
+        },
+        {
+            "title": "Nombre d'hotes",
+            "value": classe["hotes"]
+        }]
+        return result
+    return None
