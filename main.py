@@ -44,9 +44,9 @@ def test_ex_04():
 
 def test_ex_05():
     Ip = "212.51.7.0"
-    mask = "255.0.0.0"
-    nbSr = 12
-    nbHote = 1048574
+    mask = "255.255.255.252"
+    nbSr = 0
+    nbHote = 1
     print(ex05(nbSr, nbHote, Ip, mask))
 
 

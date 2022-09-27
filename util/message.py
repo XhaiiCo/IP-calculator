@@ -31,12 +31,18 @@ tab = {
 
         "sousreseaux": {
             "possible": "Il est possible de réaliser une découpe classique sur base du nombre de sous réseaux, le nombre maximal d'hôtes par sous réseau est de {}",
-            "impossible": "Il n'est pas possible de réaliser une découpe classique sur base du nombre de sous réseaux car le nombre de sous réseaux maximal est inférieur au nombre de sous réseau demandé"
+            "impossible": "Il n'est pas possible de réaliser une découpe classique sur base du nombre de sous réseaux car le nombre de sous réseaux maximal est inférieur au nombre de sous réseau demandé",
+            "erreur": {
+                "<=0": "Le nombre de sous réseaux doit être possitif"
+            }
         },
 
         "hotes": {
             "possible": "Le nombre maximal de sous réseaux pouvant être créés est de {}",
             "impossible": "Il n'est pas possible de réaliser une découpe classique sur base d'IP car le nombre de bit nécessaire à faire la découpe est insuffisant",
+            "erreur": {
+                "<=0": "Le nombre d'hotes doit être possitif"
+            }
         }
     }
 }

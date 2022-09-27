@@ -27,6 +27,9 @@ def nb_max_hote(mask_depart, nb_sr_demande):
     mask_depart = h.toBinary(mask_depart)
     result_message = message.tab["5"]["sousreseaux"]
 
+    if nb_sr_demande <= 0:
+        return result_message["erreur"]["<=0"]
+
     # nombre de 0 qu'il y a dans le masque
     nb0 = mask_depart.count("0")
 
@@ -53,13 +56,15 @@ def nb_max_sr(mask_depart, nb_hote_demande):
     mask_depart = h.toBinary(mask_depart)
     result_message = message.tab["5"]["hotes"]
 
+    if nb_hote_demande <= 0:
+        return result_message["erreur"]["<=0"]
     # nombre de 0 qu'il y a dans le masque
     nb0 = mask_depart.count("0")
 
     # prend l'exposant de 2 supérieur au nb d'hotes demandé pour la passer en binaire afin de connaitre le nombre de bits nécessaire
     decimal_val_of_nb_bit = 0
     i = 0
-    while nb_hote_demande > decimal_val_of_nb_bit:
+    while nb_hote_demande >= decimal_val_of_nb_bit:
         i += 1
         decimal_val_of_nb_bit = (2 ** i) - 1
 
