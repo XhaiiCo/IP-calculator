@@ -18,8 +18,8 @@ def test_ex_01():
 
 
 def test_ex_02():
-    ip = "223.2.33.123"
-    masque = "120.2.0.0"
+    ip = "129.23.33.123"
+    masque = "255.252.0.0"
 
     if not verifIP(ip):
         print("Erreur IP")
@@ -53,13 +53,8 @@ def test_ex_05():
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-<<<<<<< HEAD
     app.start()
-    #test_ex_01()
-=======
-    #app.start()
-    test_ex_02()
->>>>>>> 311b1ef099aea17d14043e84955c7781e3d60dd8
+    #test_ex_02()
 
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
