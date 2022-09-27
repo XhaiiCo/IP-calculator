@@ -1,4 +1,4 @@
-from tkinter import Tk
+import tkinter as tk
 
 from view import login
 from view.clear_frame import clear
@@ -6,14 +6,15 @@ from view.main_window import main_window
 
 
 def start():
-    # fenetre
-    root = Tk()
-    root.geometry("600x400")
+    root = tk.Tk()
+    root.geometry("800x500")
+    root.resizable(False, False)
 
     login.view(root)
+    #main_window(root) # pour tester sans avoir besoin de se co
     root.mainloop()
 
 
-def main(window):
-    clear(window)
-    main_window(window)
+def main(root):
+    clear(root)
+    main_window(root)

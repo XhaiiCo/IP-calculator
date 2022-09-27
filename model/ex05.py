@@ -4,13 +4,13 @@ from util import helper as h, message
 
 def ex05(nb_sr_demande, nb_hote_par_sr, ip, mask_depart):
     result = [
-            # 5.1
-            message.tab["5"]["hotes total"].format(nb_hotes_tot(mask_depart)),
-            # 5.2
-            nb_max_hote(mask_depart, nb_sr_demande),
-            # 5.3
-            nb_max_sr(mask_depart, nb_hote_par_sr )
-        ]
+        # 5.1
+        message.tab["5"]["hotes total"].format(nb_hotes_tot(mask_depart)),
+        # 5.2
+        nb_max_hote(mask_depart, nb_sr_demande),
+        # 5.3
+        nb_max_sr(mask_depart, nb_hote_par_sr )
+    ]
 
     return result
 
