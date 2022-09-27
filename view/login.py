@@ -11,18 +11,18 @@ def view(window):
     loginframe = ttk.Frame(window, padding="3 3 12 12")
     loginframe.pack(expand=YES)
 
-    lblLogin = StringVar()
-    login_entry = ttk.Entry(loginframe, width=30, textvariable=lblLogin)
+    login = StringVar()
+    login_entry = ttk.Entry(loginframe, width=30, textvariable=login)
     login_entry.grid(column=2, row=1, sticky=W)
 
-    lblPwd = StringVar()
-    pwd_entry = ttk.Entry(loginframe, width=30, textvariable=lblPwd, show='*')
+    pwd = StringVar()
+    pwd_entry = ttk.Entry(loginframe, width=30, textvariable=pwd, show='*')
     pwd_entry.grid(column=2, row=2, sticky=W, pady=3)
 
     ttk.Label(loginframe, text="Login").grid(column=1, row=1, sticky=W, pady=5)
     ttk.Label(loginframe, text="Password").grid(column=1, row=2, sticky=W, padx=(0, 15))
 
-    ttk.Button(loginframe, text="Log in", command=lambda: logIn(window, loginframe, lblLogin.get(), lblPwd.get(),
+    ttk.Button(loginframe, text="Log in", command=lambda: logIn(window, loginframe, login.get(), pwd.get(),
                                                                 login_entry, pwd_entry)).grid(column=2, row=3,
                                                                                               sticky=E, pady=3)
 
@@ -42,4 +42,3 @@ def logIn(window, loginframe, lblLogin, lblPassword, login_entry, pwd_entry):
         login_entry.insert(0, "")
         pwd_entry.delete(0, END)
         pwd_entry.insert(0, "")
-

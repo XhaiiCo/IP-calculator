@@ -6,9 +6,8 @@ from view.main_window import main_window
 
 
 def start():
-    # fenetre
     root = tk.Tk()
-    root.geometry("600x400")
+    root.geometry("800x500")
     root.resizable(False, False)
 
     #login.view(root)

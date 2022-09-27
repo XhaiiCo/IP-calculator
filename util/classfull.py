@@ -1,11 +1,27 @@
 tab = [
     {
+        "classe": "réservées",
+        "masque": "/",
+        "reseaux": "/",
+        "hotes": "/",
+        "ipMin": "0.0.0.0",
+        "ipMax": "0.255.255.255"
+    },
+    {
         "classe": "A",
         "masque": "255.0.0.0",
         "reseaux": 256,
         "hotes": 16777214,
         "ipMin": "1.0.0.0",
         "ipMax": "126.255.255.255",
+    },
+    {
+        "classe": "réservées",
+        "masque": "/",
+        "reseaux": "/",
+        "hotes": "/",
+        "ipMin": "127.0.0.0",
+        "ipMax": "127.255.255.255"
     },
     {
         "classe": "B",
@@ -25,7 +41,7 @@ tab = [
     },
     {
         "classe": "D",
-        "masque" : "/",
+        "masque": "/",
         "reseaux": "/",
         "hotes": "/",
         "ipMin": "224.0.0.0",
