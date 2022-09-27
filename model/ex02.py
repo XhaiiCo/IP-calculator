@@ -19,6 +19,16 @@ def valid_masque_for_classe(masque, classe):
     return False
 
 
+def broadcast(ip, masque):
+    broadcast = h.toPointer(h.broadcast(h.toBinary(ip), h.toBinary(masque)))
+    return broadcast
+
+
+def reseau(ip, masque):
+    reseau = h.toPointer(h.SR(h.toBinary(ip), h.toBinary(masque)))
+    return reseau
+
+
 def ex02(ip, masque):
     result = []
     result_message = message.tab["2"]
@@ -35,16 +45,14 @@ def ex02(ip, masque):
     if not valid_masque_for_classe(masque, classe["classe"]): return [result_message["masque invalid"]]
 
     # adresse de broadcast
-    broadcast = h.toPointer(h.broadcast(h.toBinary(ip), h.toBinary(classe["masque"])))
-    result.append(result_message["broadcast"].format(broadcast))
+    result.append(result_message["broadcast"].format(broadcast(ip, classe["masque"])))
 
     # Adresse du réseau
-    reseau = h.toPointer(h.SR(h.toBinary(ip), h.toBinary(classe["masque"])))
-    result.append(result_message["reseau"].format(reseau))
+    result.append(result_message["reseau"].format(reseau(ip, classe["masque"])))
 
     # Si adresse en sous-réseau
     if masque != classe["masque"]:
-        sr = h.toPointer(h.SR(h.toBinary(ip), h.toBinary(masque)))
+        sr = reseau(ip, masque)
         result.append(result_message["sr"].format(sr))
     else:
         result.append(result_message["no sr"])
