@@ -52,10 +52,4 @@ def test_ex_05():
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-<<<<<<< HEAD
     app.start()
-=======
-    app.start()
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
->>>>>>> 1d2727ad523a70df1dec5edcf5b9f9a6bdf9a5fa

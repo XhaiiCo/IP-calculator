@@ -10,8 +10,8 @@ def start():
     root.geometry("800x500")
     root.resizable(False, False)
 
-    #login.view(root)
-    main_window(root)
+    login.view(root)
+    #main_window(root) # pour tester sans avoir besoin de se co
     root.mainloop()
 
 
