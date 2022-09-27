@@ -3,22 +3,25 @@
 from util import helper as h
 
 
-def ex05(nbSRDemande, nbHoteParSR, Ip, maskDepart) :
+def ex05(nbSRDemande, nbHoteParSR, Ip, maskDepart):
     Ip = h.toBinary(Ip)
     maskDepart = h.toBinary(maskDepart)
     result = [
-        {# 5.1
-            "title": "Nombre d'hotes total",
-            "value": calculNbHoteTot(maskDepart)
-        },
-        {# 5.2
-            "title": nbMaxHote(nbSRDemande, maskDepart),
-            "value": None
-        },
-        {# 5.3
-            "title": nbMaxSR(nbHoteParSR, maskDepart),
-            "value": None
-        }
+        #{# 5.1
+        #    "title": "Nombre d'hotes total",
+        #    "value": calculNbHoteTot(maskDepart)
+        #},
+        #{# 5.2
+        #    "title": nbMaxHote(nbSRDemande, maskDepart),
+        #    "value": None
+        #},
+        #{# 5.3
+        #    "title": nbMaxSR(nbHoteParSR, maskDepart),
+        #    "value": None
+        #}
+        "Nombre d'hôtes total : " + str(calculNbHoteTot(maskDepart)),
+        nbMaxHote(nbSRDemande, maskDepart),
+        nbMaxSR(nbHoteParSR, maskDepart)
     ]
     return result
 
@@ -33,18 +36,19 @@ def nbMaxHote(nbSRDemande, maskDepart) :
     nb0 = maskDepart.count("0") 
     # s'il y moins de trois 0 dans le masque, il n'y a pas assez de place pour faire des sous réseaux
     if nb0 < 3 :
-        return "Il n'est pas possible de réaliser une découpe classique sur base du nombre de sous réseaux car il n'y a pas assez de bit disponible dans le masque pour pouvoir faire la découpe"
+        return "Il n'est pas possible de réaliser une découpe classique sur base du nombre \nde sous réseaux car il n'y a pas assez de bit disponible dans \nle masque pour pouvoir faire la découpe"
    
     (n, nbSr) = nbSR(nb0, nbSRDemande)
     
     if nbSr == -1 or nb0 - n <= 0:
-        return "Il n'est pas possible de réaliser une découpe classique sur base du nombre de sous réseaux car le nombre de sous réseaux maximal est inférieur au nombre de sous réseau demandé"
+        return "Il n'est pas possible de réaliser une découpe classique sur base du nombre \nde sous réseaux car le nombre de sous réseaux maximal est \ninférieur au nombre de sous réseau demandé"
 
-    return "Il est possible de réaliser une découpe classique, le nombre maximal d'hôtes par sous réseau est de : " + str(2**(nb0-n)-2)
+    return "Il est possible de réaliser une découpe classique,\n le nombre maximal d'hôtes par sous réseau est de : " + str(2**(nb0-n)-2)
 
 def nbSR(nb0, nbSRDemande):
     for n in range(0, nb0):
         nbSr = (2**n)-1
+        nbSRDemande = int(nbSRDemande)
         if(nbSr >= nbSRDemande):
             return (n, nbSr)#n : nombre de bits pour la numérotation des SRs et nbSr le nombre de sous réseau possible
     
@@ -56,13 +60,14 @@ def nbMaxSR(nbHoteDemande, maskDepart) :
     nb0 = maskDepart.count("0") 
 
     # s'il y moins de deux 0 dans le masque, il n'y a pas assez de place pour faire des sous réseaux
-    if nb0 < 3 :
-        return "Il n'est pas possible de réaliser une découpe classique sur base d'IP car il n'y a pas assez de bit disponible dans le masque pour pouvoir faire la découpe"
+    if nb0 < 3:
+        return "Il n'est pas possible de réaliser une découpe classique sur base d'IP \ncar il n'y a pas assez de bit disponible dans le masque pour \npouvoir faire la découpe"
 
     # prend l'exposant de 2 supérieur au nb d'hotes demandé pour la passer en binaire afin de connaitre le nombre de bits nécessaire
     decimalValOfNbBit = 0
     i = 0
-    while(nbHoteDemande > decimalValOfNbBit):
+    nbHoteDemande = int(nbHoteDemande)
+    while nbHoteDemande > decimalValOfNbBit:
         i += 1
         decimalValOfNbBit = (2**i)-1
     
@@ -76,7 +81,7 @@ def nbMaxSR(nbHoteDemande, maskDepart) :
 
     nbSRPossible = 2**(nb0 - nbBitNeeded)-1
 
-    if nbSRPossible > 0 :
+    if nbSRPossible > 0:
         return "Le nombre maximal de sous réseaux pouvant être créés est de : " + str(nbSRPossible)
     else :
-        return "Il n'est pas possible de réaliser une découpe classique sur base d'IP car le nombre de bit nécessaire à faire la découpe est insuffisant"
+        return "Il n'est pas possible de réaliser une découpe classique sur base d'IP \ncar le nombre de bit nécessaire à faire la découpe est insuffisant"

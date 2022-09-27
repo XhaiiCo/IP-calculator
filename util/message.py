@@ -14,12 +14,12 @@ tab = {
         "no sr": "Il n'y a pas de découpe en sous-réseau"
     },
 
-    "3":{
+    "3": {
         "IP in": "L'IP est dans le réseau",
         "IP out": "L'IP n'est pas dans le réseau"
     },
 
-    "4":{
+    "4": {
         "2in1": "La première IP considère que la deuxième IP est dans son réseau",
         "2notin1": "La première IP ne considère pas que la deuxième IP est dans son réseau",
         "1in2": "La deuxième IP considère que la première IP est dans son réseau",
