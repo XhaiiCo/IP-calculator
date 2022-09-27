@@ -45,7 +45,7 @@ def verifMasque(masque):
             return False
 
         # check if the current element is greater than the last element
-        if int(i) > last:
+        if last != 255 and int(i) != 0:
             return False
         last = int(i)
 

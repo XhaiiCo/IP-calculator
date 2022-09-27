@@ -26,4 +26,6 @@ class Test(unittest.TestCase):
         self.assertEqual(verifMasque("256.255.0.0"), False)
         self.assertEqual(verifMasque("255.255.12.0"), False)
         self.assertEqual(verifMasque("255.255.252.0"), True)
+        self.assertEqual(verifMasque("255.252.192.0"), False)
+        self.assertEqual(verifMasque("255.252.0.0"), True)
 
