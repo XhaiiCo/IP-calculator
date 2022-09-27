@@ -1,4 +1,4 @@
-from util import classfull
+from util import classfull, message
 
 
 def find_class(ip):
@@ -15,10 +15,11 @@ def find_class(ip):
 def ex01(ip):
     c = find_class(ip)
     if c:
+        result_message = message.tab["1"]
         result = [
-            "Classe {}".format(c["classe"]),
-            "Nombre de reseaux : {}".format(c["reseaux"]),
-            "Nombre d'hotes : {}".format(c["hotes"])]
+            result_message["classe"].format(c["classe"]),
+            result_message["reseau"].format(c["reseaux"]),
+            result_message["hotes"].format(c["hotes"])]
         return result
 
     return ["Erreur"]
