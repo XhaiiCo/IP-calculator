@@ -44,12 +44,18 @@ def test_ex_04():
 
 def test_ex_05():
     Ip = "212.51.7.0"
-    mask = "255.255.255.240"
-    nbSr = 2
-    nbHote = 12
-    cons.affiche(ex05(nbSr, nbHote, Ip, mask))
+    mask = "255.255.255.252"
+    nbSr = 0
+    nbHote = 1
+    print(ex05(nbSr, nbHote, Ip, mask))
 
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
+<<<<<<< HEAD
     app.start()
+=======
+    app.start()
+
+# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+>>>>>>> 1d2727ad523a70df1dec5edcf5b9f9a6bdf9a5fa
