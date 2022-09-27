@@ -21,24 +21,20 @@ def verifIP(ip):
 
 def verifMasque(masque):
     # split the masque into a array by the '.'
-    splited_masque = masque.split('.')
+    splitted_masque = masque.split('.')
 
     # check if the array is len(4)
-    if len(splited_masque) != 4:
+    if len(splitted_masque) != 4:
         return False
 
     last = 255
 
-    for i in splited_masque:
+    for i in splitted_masque:
         # check is the current element is a integer
         try:
             int(i)
         except:
             print("An exception occurred")
-            return False
-
-        # check is the current element is between 0 and 250
-        if int(i) < 0 or int(i) > 255:
             return False
 
         if int(i) not in [0, 128, 192, 224, 240, 248, 252, 255]:
@@ -49,8 +45,13 @@ def verifMasque(masque):
             return False
         last = int(i)
 
+
     # Biggest subnet mask is 255.255.255.252
-    if int(splited_masque[3]) > 252:
+    if int(splitted_masque[3]) > 252:
+        return False
+
+    # Littlest subnet mask is 255.255.255.252
+    if int(splitted_masque[0]) != 255:
         return False
 
     return True
