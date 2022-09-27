@@ -12,5 +12,10 @@ tab = {
         "reseau": "L'adresse de réseau est {}",
         "sr" : "L'adresse de sous-réseau est {}",
         "no sr": "Il n'y a pas de découpe en sous-réseau"
+    },
+
+    "3":{
+        "IP in": "L'IP est dans le réseau",
+        "IP out": "L'IP n'est pas dans le réseau"
     }
 }

@@ -2,25 +2,25 @@
 # compte le nombre de 1 du masque de l'ip et ajoute les .
 # test si les x(donné par le masque) premiers chifres de l'ip et du network sont égaux
 
-from util import helper as h
+from util import helper as h, message
 
-def ex03(addressIp, maskAddress, networkIp):
-    if isIpInNetwork(addressIp, maskAddress, networkIp):
-        return [{"title": "L'IP est dans le réseau", "value": None}]
 
-    return [{"title": "L'IP n'est pas dans le réseau", "value": None}]
+def ex03(address_ip, mask_address, network_ip):
+    result_message = message.tab["3"]
+    if is_ip_in_network(address_ip, mask_address, network_ip):
+        return [result_message["IP in"]]
 
-def isIpInNetwork(addressIp, maskAddress, networkIp) :
-    if not h.verifMasque(maskAddress) : return False
-    if not (h.verifIP(addressIp) and h.verifIP(networkIp)) : return False
+    return [result_message["IP out"]]
 
-    addressIpBinary = h.toBinary(addressIp)
-    networkIpBinary = h.toBinary(networkIp)
 
-    srIp = h.SR(addressIpBinary, h.toBinary(maskAddress))
-    srNetIp = h.SR(networkIpBinary, h.toBinary(maskAddress))
+def is_ip_in_network(address_ip, mask_address, network_ip):
+    address_ip_binary = h.toBinary(address_ip)
+    network_ip_binary = h.toBinary(network_ip)
 
-    if (srIp == srNetIp) :
+    sr_ip = h.SR(address_ip_binary, h.toBinary(mask_address))
+    sr_net_ip = h.SR(network_ip_binary, h.toBinary(mask_address))
+
+    if sr_ip == sr_net_ip:
         return True
 
     return False
