@@ -17,5 +17,12 @@ tab = {
     "3":{
         "IP in": "L'IP est dans le réseau",
         "IP out": "L'IP n'est pas dans le réseau"
+    },
+
+    "4":{
+        "2in1": "La première IP considère que la deuxième IP est dans son réseau",
+        "2notin1": "La première IP ne considère pas que la deuxième IP est dans son réseau",
+        "1in2": "La deuxième IP considère que la première IP est dans son réseau",
+        "1notin2": "La deuxième IP ne considère pas que la première IP est dans son réseau"
     }
 }

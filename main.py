@@ -6,7 +6,7 @@ from view import app
 from model.ex01 import ex01
 from model.ex02 import ex02
 from model.ex03 import ex03
-from model.ex04 import compareAddressAndNetwork
+from model.ex04 import compare_address_and_network
 from model.ex05 import ex05
 from util import console as cons
 from util.helper import verifIP, verifMasque
@@ -39,7 +39,7 @@ def test_ex_04():
     ip2 = "192.168.128.0"
     mask2 = "255.255.192.0"
 
-    print(compareAddressAndNetwork(ip1, mask1, ip2, mask2))
+    print(compare_address_and_network(ip1, mask1, ip2, mask2))
 
 
 def test_ex_05():
@@ -53,6 +53,6 @@ def test_ex_05():
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     app.start()
-    #test_ex_03()
+    #test_ex_04()
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/

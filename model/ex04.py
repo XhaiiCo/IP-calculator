@@ -1,16 +1,20 @@
 from model import ex03
+from util import message
 
 
-def compareAddressAndNetwork(ip1, mask1, ip2, mask2) :
-    str = ""
-    if (ex03.isIpInNetwork(ip1, mask1, ip2)) :
-        str += "La première IP considère que la deuxième IP est dans son réseau\n"
-    else :
-        str += "La première IP ne considère pas que la deuxième IP est dans son réseau\n"
+def compare_address_and_network(ip1, mask1, ip2, mask2):
+    result = []
+    result_message = message.tab["4"]
 
-    if (ex03.isIpInNetwork(ip2, mask2, ip1)) :
-        str += "La deuxième IP considère que la première IP est dans son réseau"
-    else :
-        str += "La deuxième IP ne considère pas que la première IP est dans son réseau"
-        
-    return str
+    if ex03.is_ip_in_network(ip1, mask1, ip2):
+        result.append(result_message["2in1"])
+    else:
+        result.append(result_message["2notin1"])
+
+    if ex03.is_ip_in_network(ip2, mask2, ip1):
+        result.append(result_message["1in2"])
+
+    else:
+        result.append(result_message["1notin2"])
+
+    return result
