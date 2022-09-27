@@ -1,5 +1,4 @@
 # This is a sample Python script.
-
 # Press Maj+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
@@ -18,15 +17,15 @@ def test_ex_01():
 
 
 def test_ex_02():
-    ip = "129.23.33.123"
-    masque = "255.252.0.0"
+    ip = "122.122.33.123"
+    masque = "255.192.0.0"
 
     if not verifIP(ip):
         print("Erreur IP")
     elif not verifMasque(masque):
         print("Erreur masque")
     else:
-        cons.affiche(ex02(ip, masque))
+        print(ex02(ip, masque))
 
 
 def test_ex_03():
@@ -53,8 +52,7 @@ def test_ex_05():
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    # app.start()
-    test_ex_01()
-
+    app.start()
+    # test_ex_02()
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
