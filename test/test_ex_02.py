@@ -12,6 +12,17 @@ class Test(unittest.TestCase):
         self.assertEqual(valid_masque_for_classe("255.255.255.0", "C"), True)
         self.assertEqual(valid_masque_for_classe("255.255.252.0", "C"), False)
 
+    def test_broadcast(self):
+        self.assertEqual(broadcast("192.0.0.0", "255.255.255.0"), "192.0.0.255")
+        self.assertEqual(broadcast("128.0.0.0", "255.255.0.0"), "128.0.255.255")
+        self.assertEqual(broadcast("1.0.0.0", "255.0.0.0"), "1.255.255.255")
+
+    def test_reseau(self):
+        self.assertEqual(reseau("192.0.0.0", "255.255.255.0"), "192.0.0.0")
+        self.assertEqual(reseau("128.0.0.0", "255.255.0.0"), "128.0.0.0")
+        self.assertEqual(reseau("1.0.0.0", "255.0.0.0"), "1.0.0.0")
+        self.assertEqual(reseau("129.32.23.1", "255.255.192.0"), "129.32.0.0")
+        self.assertEqual(reseau("20.234.231.20", "255.252.0.0"), "20.232.0.0")
 
     def test_ex02(self):
         result_message = message.tab["2"]
@@ -25,17 +36,3 @@ class Test(unittest.TestCase):
         self.assertEqual(ex02("1.0.0.0", "192.0.0.0"), [result_message["masque invalid"]])
         self.assertEqual(ex02("128.0.0.0", "255.252.0.0"), [result_message["masque invalid"]])
         self.assertEqual(ex02("192.0.0.0", "255.255.252.0"), [result_message["masque invalid"]])
-
-        #broadcast
-        self.assertEqual(broadcast("192.0.0.0", "255.255.255.0"), "192.0.0.255")
-        self.assertEqual(broadcast("128.0.0.0", "255.255.0.0"), "128.0.255.255")
-        self.assertEqual(broadcast("1.0.0.0", "255.0.0.0"), "1.255.255.255")
-
-        #Reseau
-        self.assertEqual(reseau("192.0.0.0", "255.255.255.0"), "192.0.0.0")
-        self.assertEqual(reseau("128.0.0.0", "255.255.0.0"), "128.0.0.0")
-        self.assertEqual(reseau("1.0.0.0", "255.0.0.0"), "1.0.0.0")
-        self.assertEqual(reseau("129.32.23.1", "255.255.192.0"), "129.32.0.0")
-        self.assertEqual(reseau("20.234.231.20", "255.252.0.0"), "20.232.0.0")
-
-
