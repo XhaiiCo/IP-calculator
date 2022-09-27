@@ -8,7 +8,6 @@ from view import app
 def view(window):
     window.title("Connexion")
 
-    # TODO minwidth window
     loginframe = ttk.Frame(window, padding="3 3 12 12")
     loginframe.pack(expand=YES)
 
