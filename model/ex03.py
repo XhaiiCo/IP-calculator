@@ -3,10 +3,14 @@
 # test si les x(donné par le masque) premiers chifres de l'ip et du network sont égaux
 
 from util import helper as h, message
+from util.helper import verif_ip_reseau
 
 
 def ex03(address_ip, mask_address, network_ip):
     result_message = message.tab["3"]
+
+    if not verif_ip_reseau(network_ip):
+        return [result_message["error"]["ipreseau"]]
     if is_ip_in_network(address_ip, mask_address, network_ip):
         return [result_message["IP in"]]
 

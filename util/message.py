@@ -16,7 +16,10 @@ tab = {
 
     "3": {
         "IP in": "L'IP est dans le réseau",
-        "IP out": "L'IP n'est pas dans le réseau"
+        "IP out": "L'IP n'est pas dans le réseau",
+        "error": {
+            "ipreseau": "L'ip n'est pas une ip de reseau"
+        }
     },
 
     "4": {
@@ -44,5 +47,10 @@ tab = {
                 "<=0": "Le nombre d'hotes doit être possitif"
             }
         }
+    },
+
+    "error": {
+        "ip": "Cette IP n'est pas valide",
+        "masque": "Ce masque n'est pas valide"
     }
 }
