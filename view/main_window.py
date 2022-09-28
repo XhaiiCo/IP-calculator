@@ -26,22 +26,22 @@ def main_window(window):
     leftMenuContainer.pack(expand=True)
 
     # "Déterminer la classe d'une IP"
-    ttk.Button(leftMenuContainer, text="Exercice 1",
+    ttk.Button(leftMenuContainer, text="Déterminer la classe d'une IP",
                command=lambda: display(1, rightInputContainer, rightOutputContainer)) \
         .grid(column=1, row=1, sticky=E, pady=3)
 
     # "Déterminer l'adresse réseau + broadcast"
-    ttk.Button(leftMenuContainer, text="Exercice 2",
+    ttk.Button(leftMenuContainer, text="Déterminer l'adresse réseau + broadcast",
                command=lambda: display(2, rightInputContainer, rightOutputContainer)) \
         .grid(column=1, row=2, sticky=E, pady=3)
 
     # "Déterminer si une IP appartient à un réseau"
-    ttk.Button(leftMenuContainer, text="Exercice 3",
+    ttk.Button(leftMenuContainer, text="Déterminer si une IP appartient à un réseau",
                command=lambda: display(3, rightInputContainer, rightOutputContainer)) \
         .grid(column=1, row=3, sticky=E, pady=3)
 
     # "Déterminer si 2 machines se considère dans le même réseau"
-    ttk.Button(leftMenuContainer, text="Exercice 4",
+    ttk.Button(leftMenuContainer, text="Déterminer si 2 machines se considère dans le même réseau",
                command=lambda: display(4, rightInputContainer, rightOutputContainer)) \
         .grid(column=1, row=4, sticky=E, pady=3)
 
@@ -230,7 +230,6 @@ def display(exo, frameInput, frameOutput):
                 return
 
             display_output(ex05.ex05(nbSR.get(), nbHParSR.get(), ip, masque), frameOutput)
-
 
 
 def display_output(exo_return, frame_output):
