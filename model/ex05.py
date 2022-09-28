@@ -3,9 +3,20 @@ from util import helper as h, message
 
 
 def ex05(nb_sr_demande, nb_hote_par_sr, ip, mask_depart):
+    result_message = message.tab["5"]
+    try:
+        nb_sr_demande = int(nb_sr_demande)
+    except:
+        return [result_message["error"]["nbsr"]]
+
+    try:
+        nb_hote_par_sr = int(nb_hote_par_sr)
+    except:
+        return [result_message["error"]["nbhotes"]]
+
     result = [
         # 5.1
-        message.tab["5"]["hotes total"].format(nb_hotes_tot(mask_depart)),
+        result_message["hotes total"].format(nb_hotes_tot(mask_depart)),
         # 5.2
         nb_max_hote(mask_depart, nb_sr_demande),
         # 5.3
