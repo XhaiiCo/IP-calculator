@@ -120,7 +120,7 @@ def display(exo, frameInput, frameOutput):
 
         ttk.Label(rightInputContainer, text="Entrez l'adresse du réseau").grid(column=1, row=5, sticky=W, pady=(5, 0))
         reseau_value = StringVar()
-        reseau_entry = ttk.Entry(rightInputContainer, width=30, textvariable=reseau)
+        reseau_entry = ttk.Entry(rightInputContainer, width=30, textvariable=reseau_value)
         reseau_entry.grid(column=1, row=6, sticky=W)
 
         ttk.Button(rightInputContainer, text="Text",
@@ -147,24 +147,24 @@ def display(exo, frameInput, frameOutput):
     elif exo == 4:
         ttk.Label(rightInputContainer, text="Entrez la première adresse IP").grid(column=1, row=1, sticky=W)
         ip1_value = StringVar()
-        ip1_entry = ttk.Entry(rightInputContainer, width=40, textvariable=ip1)
+        ip1_entry = ttk.Entry(rightInputContainer, width=40, textvariable=ip1_value)
         ip1_entry.grid(column=1, row=2, sticky=W)
 
         ttk.Label(rightInputContainer, text="Entrez le masque de la première adresse IP").grid(column=1, row=3,
                                                                                                sticky=W, pady=(5, 0))
         masque1_value = StringVar()
-        masque1_entry = ttk.Entry(rightInputContainer, width=40, textvariable=masque1)
+        masque1_entry = ttk.Entry(rightInputContainer, width=40, textvariable=masque1_value)
         masque1_entry.grid(column=1, row=4, sticky=W)
 
         ttk.Label(rightInputContainer, text="Entrez la deuxième adresse IP").grid(column=1, row=5, sticky=W)
         ip2_value = StringVar()
-        ip2_entry = ttk.Entry(rightInputContainer, width=40, textvariable=ip2)
+        ip2_entry = ttk.Entry(rightInputContainer, width=40, textvariable=ip2_value)
         ip2_entry.grid(column=1, row=6, sticky=W)
 
         ttk.Label(rightInputContainer, text="Entrez le masque de la deuxième  adresse IP").grid(column=1, row=7,
                                                                                                 sticky=W, pady=(5, 0))
         masque2_value = StringVar()
-        masque2_entry = ttk.Entry(rightInputContainer, width=40, textvariable=masque2)
+        masque2_entry = ttk.Entry(rightInputContainer, width=40, textvariable=masque2_value)
         masque2_entry.grid(column=1, row=8, sticky=W)
 
         ttk.Button(rightInputContainer, text="Text",
