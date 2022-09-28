@@ -5,12 +5,12 @@ from model import ex01, ex02, ex03, ex04, ex05
 from util import message
 from util.helper import verifIP, verifMasque, verif_ip_reseau
 
-
+# TODO aligner les boutons et aligner les textes dans les boutons
 def main_window(window):
     window.title("Menu principal")
 
     # Menu gauche
-    leftMenu = Frame(window, padx=80, width=200)
+    leftMenu = Frame(window, padx=40, background="black")
     leftMenu.pack(side="left", fill="y", expand=False)
     # Menu doite en bas
     rightOutputContainer = Frame(window, padx=80, height=200)
@@ -22,7 +22,7 @@ def main_window(window):
     rightInputContainer.pack_propagate(False)
 
     # Container Menu gauche
-    leftMenuContainer = Frame(leftMenu)
+    leftMenuContainer = Frame(leftMenu, background="red")
     leftMenuContainer.pack(expand=True)
 
     # "Déterminer la classe d'une IP"
@@ -31,7 +31,7 @@ def main_window(window):
         .grid(column=1, row=1, sticky=E, pady=3)
 
     # "Déterminer l'adresse réseau + broadcast"
-    ttk.Button(leftMenuContainer, text="Déterminer l'adresse réseau + broadcast",
+    ttk.Button(leftMenuContainer, text="Déterminer l'adresse réseau & broadcast",
                command=lambda: display(2, rightInputContainer, rightOutputContainer)) \
         .grid(column=1, row=2, sticky=E, pady=3)
 
@@ -41,12 +41,12 @@ def main_window(window):
         .grid(column=1, row=3, sticky=E, pady=3)
 
     # "Déterminer si 2 machines se considère dans le même réseau"
-    ttk.Button(leftMenuContainer, text="Déterminer si 2 machines se considère dans le même réseau",
+    ttk.Button(leftMenuContainer, text="Déterminer si 2 machines se considère \ndans le même réseau",
                command=lambda: display(4, rightInputContainer, rightOutputContainer)) \
         .grid(column=1, row=4, sticky=E, pady=3)
 
     #
-    ttk.Button(leftMenuContainer, text="Exercice 5",
+    ttk.Button(leftMenuContainer, text="Vérification découpe classique",
                command=lambda: display(5, rightInputContainer, rightOutputContainer)) \
         .grid(column=1, row=5, sticky=E, pady=3)
 
