@@ -19,6 +19,15 @@ def verifIP(ip):
     return True
 
 
+def verif_ip_reseau(ip):
+    if not verifIP(ip):
+        return False
+
+    if int(ip.split('.')[3]) % 2 != 0:
+        return False
+    return True
+
+
 def verifMasque(masque):
     # split the masque into a array by the '.'
     splitted_masque = masque.split('.')
