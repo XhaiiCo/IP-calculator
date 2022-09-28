@@ -3,7 +3,7 @@ from tkinter import ttk, messagebox
 
 from model import ex01, ex02, ex03, ex04, ex05
 from util import message
-from util.helper import verifIP, verifMasque
+from util.helper import verifIP, verifMasque, verif_ip_reseau
 
 
 def main_window(window):
@@ -119,43 +119,77 @@ def display(exo, frameInput, frameOutput):
         masque_entry.grid(column=1, row=4, sticky=W)
 
         ttk.Label(rightInputContainer, text="Entrez l'adresse du réseau").grid(column=1, row=5, sticky=W, pady=(5, 0))
-        reseau = StringVar()
+        reseau_value = StringVar()
         reseau_entry = ttk.Entry(rightInputContainer, width=30, textvariable=reseau)
         reseau_entry.grid(column=1, row=6, sticky=W)
 
         ttk.Button(rightInputContainer, text="Text",
-                   command=lambda: display_output(ex03.ex03(ip_value.get(), masque_value.get(), reseau.get()), frameOutput)) \
+                   command=lambda: submit()) \
             .grid(column=1, row=7, sticky=E, pady=(7, 0))
+
+        def submit():
+            ip = ip_value.get()
+            masque = masque_value.get()
+            reseau = reseau_value.get()
+            if not verifIP(ip):
+                display_output([result_message["error"]["ip"]], frameOutput)
+                return
+            if not verifMasque(masque):
+                display_output([result_message["error"]["masque"]], frameOutput)
+                return
+            if not verif_ip_reseau(reseau):
+                display_output([result_message["error"]["ipreseau"]], frameOutput)
+                return
+
+            display_output(ex03.ex03(ip, masque), frameOutput)
 
 
     elif exo == 4:
         ttk.Label(rightInputContainer, text="Entrez la première adresse IP").grid(column=1, row=1, sticky=W)
-        ip1 = StringVar()
+        ip1_value = StringVar()
         ip1_entry = ttk.Entry(rightInputContainer, width=40, textvariable=ip1)
         ip1_entry.grid(column=1, row=2, sticky=W)
 
         ttk.Label(rightInputContainer, text="Entrez le masque de la première adresse IP").grid(column=1, row=3,
                                                                                                sticky=W, pady=(5, 0))
-        masque1 = StringVar()
+        masque1_value = StringVar()
         masque1_entry = ttk.Entry(rightInputContainer, width=40, textvariable=masque1)
         masque1_entry.grid(column=1, row=4, sticky=W)
 
         ttk.Label(rightInputContainer, text="Entrez la deuxième adresse IP").grid(column=1, row=5, sticky=W)
-        ip2 = StringVar()
+        ip2_value = StringVar()
         ip2_entry = ttk.Entry(rightInputContainer, width=40, textvariable=ip2)
         ip2_entry.grid(column=1, row=6, sticky=W)
 
         ttk.Label(rightInputContainer, text="Entrez le masque de la deuxième  adresse IP").grid(column=1, row=7,
                                                                                                 sticky=W, pady=(5, 0))
-        masque2 = StringVar()
+        masque2_value = StringVar()
         masque2_entry = ttk.Entry(rightInputContainer, width=40, textvariable=masque2)
         masque2_entry.grid(column=1, row=8, sticky=W)
 
         ttk.Button(rightInputContainer, text="Text",
-                   command=lambda: display_output(
-                       ex04.compare_address_and_network(ip1.get(), masque1.get(), ip2.get(), masque2.get()),
-                       frameOutput)) \
+                   command=lambda: submit()) \
             .grid(column=1, row=9, sticky=E, pady=(7, 0))
+
+        def submit():
+            ip1 = ip1_value.get()
+            masque1 = masque1_value.get()
+            ip2 = ip2_value.get()
+            masque2 = masque2_value.get()
+            if not verifIP(ip1):
+                display_output([result_message["error"]["ip"]], frameOutput)
+                return
+            if not verifMasque(masque1):
+                display_output([result_message["error"]["masque"]], frameOutput)
+                return
+            if not verifIP(ip2):
+                display_output([result_message["error"]["ip"]], frameOutput)
+                return
+            if not verifMasque(masque2):
+                display_output([result_message["error"]["masque"]], frameOutput)
+                return
+
+            display_output(ex04.ex04(ip1, masque1, ip2, masque2), frameOutput)
 
     elif exo == 5:
         ttk.Label(rightInputContainer, text="Entrez un nombre de sous réseau").grid(column=1, row=1, sticky=W)
@@ -183,6 +217,20 @@ def display(exo, frameInput, frameOutput):
                    command=lambda: display_output(ex05.ex05(nbSR.get(), nbHParSR.get(), ip_value.get(), masque_value.get()),
                                                   frameOutput)) \
             .grid(column=1, row=9, sticky=E, pady=(7, 0))
+
+        def submit():
+            ip = ip_value.get()
+            masque = masque_value.get()
+
+            if not verifIP(ip):
+                display_output([result_message["error"]["ip"]], frameOutput)
+                return
+            if not verifMasque(masque):
+                display_output([result_message["error"]["masque"]], frameOutput)
+                return
+
+            display_output(ex05.ex05(nbSR.get(), nbHParSR.get(), ip, masque), frameOutput)
+
 
 
 def display_output(exo_return, frame_output):
