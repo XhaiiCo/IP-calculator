@@ -10,7 +10,7 @@ def ex03(address_ip, mask_address, network_ip):
     result_message = message.tab["3"]
 
     if not verif_ip_reseau(network_ip):
-        return [result_message["error"]["ipreseau"]]
+        return [message.tab["error"]["ipreseau"]]
     if is_ip_in_network(address_ip, mask_address, network_ip):
         return [result_message["IP in"]]
 
