@@ -214,16 +214,15 @@ def display(exo, frameInput, frameOutput):
         masque_entry.grid(column=1, row=8, sticky=W)
 
         ttk.Button(rightInputContainer, text="Text",
-                   command=lambda: display_output(ex05.ex05(nbSR.get(), nbHParSR.get(), ip_value.get(), masque_value.get()),
-                                                  frameOutput)) \
+                   command=lambda: submit()) \
             .grid(column=1, row=9, sticky=E, pady=(7, 0))
 
         def submit():
             ip = ip_value.get()
             masque = masque_value.get()
 
-            if not verifIP(ip):
-                display_output([result_message["error"]["ip"]], frameOutput)
+            if not verif_ip_reseau(ip):
+                display_output([result_message["error"]["ipreseau"]], frameOutput)
                 return
             if not verifMasque(masque):
                 display_output([result_message["error"]["masque"]], frameOutput)
