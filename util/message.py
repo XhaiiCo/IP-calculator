@@ -20,10 +20,10 @@ tab = {
     },
 
     "4": {
-        "2in1": "La première IP considère que la deuxième IP est dans son réseau",
-        "2notin1": "La première IP ne considère pas que la deuxième IP est dans son réseau",
-        "1in2": "La deuxième IP considère que la première IP est dans son réseau",
-        "1notin2": "La deuxième IP ne considère pas que la première IP est dans son réseau"
+        "2in1": "La première IP considère que la deuxième IP\nest dans son réseau",
+        "2notin1": "La première IP ne considère pas que la\ndeuxième IP est dans son réseau",
+        "1in2": "La deuxième IP considère que la première IP\nest dans son réseau",
+        "1notin2": "La deuxième IP ne considère pas que la\npremière IP est dans son réseau"
     },
 
     "5": {
@@ -38,7 +38,7 @@ tab = {
         },
 
         "hotes": {
-            "possible": "Le nombre maximal de sous réseaux pouvant être créés est de {}",
+            "possible": "Le nombre maximal de sous réseaux pouvant\nêtre créés est de {}",
             "impossible": "Il n'est pas possible de réaliser une découpe \nclassique sur base d'IP car le nombrede bit \nnécessaire à faire la découpe est insuffisant",
             "erreur": {
                 "<=0": "Le nombre d'hotes doit être possitif"

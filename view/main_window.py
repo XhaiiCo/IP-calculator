@@ -146,7 +146,7 @@ def display(exo, frameInput, frameOutput, label):
                 display_output([result_message["error"]["ipreseau"]], frameOutput)
                 return
 
-            display_output(ex03.ex03(ip, masque), frameOutput)
+            display_output(ex03.ex03(ip, masque, reseau), frameOutput)
 
 
     elif exo == 4:
@@ -194,7 +194,7 @@ def display(exo, frameInput, frameOutput, label):
                 display_output([result_message["error"]["masque"]], frameOutput)
                 return
 
-            display_output(ex04.ex04(ip1, masque1, ip2, masque2), frameOutput)
+            display_output(ex04.compare_address_and_network(ip1, masque1, ip2, masque2), frameOutput)
 
     elif exo == 5:
         ttk.Label(rightInputContainer, text="Entrez un nombre de sous réseau", font=fontLabel).grid(column=1, row=1, sticky=W)
