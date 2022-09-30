@@ -15,16 +15,15 @@ class Test(unittest.TestCase):
 
         self.assertEqual(nb_max_hote("255.255.0.0", 5), result_message["possible"].format(8190))
         self.assertEqual(nb_max_hote("255.255.192.0", 10), result_message["possible"].format(1022))
-        self.assertEqual(nb_max_hote("255.255.255.192", 16), result_message["possible"].format(2))
+        self.assertEqual(nb_max_hote("255.255.255.192", 15), result_message["possible"].format(2))
         self.assertEqual(nb_max_hote("255.255.255.192", 17), result_message["impossible"])
-        self.assertEqual(nb_max_hote("255.255.255.252", 1), result_message["possible"].format(2))
+        self.assertEqual(nb_max_hote("255.255.255.252", 1), result_message["impossible"])
         self.assertEqual(nb_max_hote("255.255.255.254", 1), result_message["impossible"])
         self.assertEqual(nb_max_hote("255.255.192.0", 30), result_message["possible"].format(510))
         self.assertEqual(nb_max_hote("255.255.128.0", 24), result_message["possible"].format(1022))
-        self.assertEqual(nb_max_hote("255.255.255.0", 64), result_message["possible"].format(2))
+        self.assertEqual(nb_max_hote("255.255.255.0", 63), result_message["possible"].format(2))
         self.assertEqual(nb_max_hote("255.255.255.0", 65), result_message["impossible"])
-        self.assertEqual(nb_max_hote("255.255.255.192", 1), result_message["possible"].format(62))
-        self.assertEqual(nb_max_hote("255.255.255.252", 1), result_message["possible"].format(2))
+        self.assertEqual(nb_max_hote("255.255.255.192", 1), result_message["possible"].format(30))
         self.assertEqual(nb_max_hote("255.255.255.0", 0), result_message["erreur"]["<=0"])
 
     def test_nb_max_sr(self):
