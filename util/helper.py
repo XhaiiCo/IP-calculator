@@ -23,7 +23,8 @@ def verif_ip_reseau(ip):
     if not verifIP(ip):
         return False
 
-    if int(ip.split('.')[3]) % 2 != 0:
+    binary_ip = toBinary(ip)
+    if int(binary_ip.split('.')[-1]) != 0 and int(binary_ip.split('.')[-2]) != 0:
         return False
     return True
 
