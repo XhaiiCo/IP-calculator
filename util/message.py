@@ -8,9 +8,9 @@ tab = {
     "2": {
         "IP invalid": "Cette IP n'est pas utilisable",
         "masque invalid": "Ce masque n'est pas valide",
-        "broadcast" : "L'adresse de broadcast du réseau est {}",
+        "broadcast": "L'adresse de broadcast du réseau est {}",
         "reseau": "L'adresse de réseau est {}",
-        "sr" : "L'adresse de sous-réseau est {}",
+        "sr": "L'adresse de sous-réseau est {}",
         "no sr": "Il n'y a pas de découpe en sous-réseau"
     },
 
@@ -30,8 +30,8 @@ tab = {
         "hotes total": "Le nombre d'hotes total est de {}",
 
         "sousreseaux": {
-            "possible": "Il est possible de réaliser une découpe classique sur \nbase du nombrede sous réseaux, le nombre maximal \nd'hôtes par sous réseau est de {}",
-            "impossible": "Il n'est pas possible de réaliser une découpe \nclassique sur base du nombrede sous réseaux car le \nnombre de sous réseaux maximal est inférieur au nombre \nde sous réseau demandé",
+            "possible": "Il est possible de réaliser une découpe classique sur \nbase du nombre de sous réseaux, le nombre maximal \nd'hôtes par sous réseau est de {}",
+            "impossible": "Il n'est pas possible de réaliser une découpe \nclassique sur base du nombre de sous réseaux car le \nnombre de sous réseaux maximal est inférieur au nombre \nde sous réseau demandé",
             "erreur": {
                 "<=0": "Le nombre de sous réseaux doit être possitif"
             }
@@ -46,7 +46,7 @@ tab = {
         },
 
         "error": {
-            "nbsr" : "Nombre de sous-reseaux incorrect",
+            "nbsr": "Nombre de sous-reseaux incorrect",
             "nbhotes": "Nombre d'hotes incorrect"
         }
     },

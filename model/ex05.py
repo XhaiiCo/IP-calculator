@@ -20,7 +20,7 @@ def ex05(nb_sr_demande, nb_hote_par_sr, ip, mask_depart):
         # 5.2
         nb_max_hote(mask_depart, nb_sr_demande),
         # 5.3
-        nb_max_sr(mask_depart, nb_hote_par_sr )
+        nb_max_sr(mask_depart, nb_hote_par_sr)
     ]
 
     return result
@@ -44,7 +44,8 @@ def nb_max_hote(mask_depart, nb_sr_demande):
     # nombre de 0 qu'il y a dans le masque
     nb0 = mask_depart.count("0")
 
-    (n, nbSr) = nb_sr(nb0 - 2, nb_sr_demande)# -2 car on ne peut aller au dessus de .252
+    # -2 car on ne peut aller au dessus de .252
+    (n, nbSr) = nb_sr(nb0 - 2, nb_sr_demande)
 
     if nbSr == -1 or nb0 - n <= 0:
         return result_message["impossible"]
@@ -54,7 +55,7 @@ def nb_max_hote(mask_depart, nb_sr_demande):
 
 def nb_sr(nb0, nb_sr_demande):
     for n in range(0, (nb0+1)):
-        nb_sr = (2 ** n)
+        nb_sr = (2 ** n)-1
 
         if nb_sr >= nb_sr_demande:
             return n, nb_sr  # n : nombre de bits pour la numérotation des SRs et nb_sr le nombre de sous réseau possible
