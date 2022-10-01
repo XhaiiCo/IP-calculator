@@ -197,26 +197,26 @@ def display(exo, frameInput, frameOutput, label):
             display_output(ex04.compare_address_and_network(ip1, masque1, ip2, masque2), frameOutput)
 
     elif exo == 5:
-        ttk.Label(rightInputContainer, text="Entrez un nombre de sous réseau", font=fontLabel).grid(column=1, row=1, sticky=W)
+        ttk.Label(rightInputContainer, text="Entrez une adresse IP", font=fontLabel).grid(column=1, row=1, sticky=W)
+        ip_value = StringVar()
+        ip_entry = ttk.Entry(rightInputContainer, width=40, textvariable=ip_value)
+        ip_entry.grid(column=1, row=2, sticky=W)
+
+        ttk.Label(rightInputContainer, text="Entrez le masque de départ", font=fontLabel).grid(column=1, row=3, sticky=W, pady=(5, 0))
+        masque_value = StringVar()
+        masque_entry = ttk.Entry(rightInputContainer, width=40, textvariable=masque_value)
+        masque_entry.grid(column=1, row=4, sticky=W)
+
+        ttk.Label(rightInputContainer, text="Entrez un nombre de sous réseau", font=fontLabel).grid(column=1, row=5, sticky=W)
         nbSR = StringVar()
         nbSR_entry = ttk.Entry(rightInputContainer, width=40, textvariable=nbSR)
-        nbSR_entry.grid(column=1, row=2, sticky=W)
+        nbSR_entry.grid(column=1, row=6, sticky=W)
 
-        ttk.Label(rightInputContainer, text="Entrez un nombre d'hôte par réseau", font=fontLabel).grid(column=1, row=3, sticky=W,
+        ttk.Label(rightInputContainer, text="Entrez un nombre d'hôte par réseau", font=fontLabel).grid(column=1, row=7, sticky=W,
                                                                                        pady=(5, 0))
         nbHParSR = StringVar()
         nbHParSR_entry = ttk.Entry(rightInputContainer, width=40, textvariable=nbHParSR)
-        nbHParSR_entry.grid(column=1, row=4, sticky=W)
-
-        ttk.Label(rightInputContainer, text="Entrez une adresse IP", font=fontLabel).grid(column=1, row=5, sticky=W)
-        ip_value = StringVar()
-        ip_entry = ttk.Entry(rightInputContainer, width=40, textvariable=ip_value)
-        ip_entry.grid(column=1, row=6, sticky=W)
-
-        ttk.Label(rightInputContainer, text="Entrez le masque de départ", font=fontLabel).grid(column=1, row=7, sticky=W, pady=(5, 0))
-        masque_value = StringVar()
-        masque_entry = ttk.Entry(rightInputContainer, width=40, textvariable=masque_value)
-        masque_entry.grid(column=1, row=8, sticky=W)
+        nbHParSR_entry.grid(column=1, row=8, sticky=W)
 
         ttk.Button(rightInputContainer, text="Calculer",
                    command=lambda: submit()) \
@@ -226,8 +226,8 @@ def display(exo, frameInput, frameOutput, label):
             ip = ip_value.get()
             masque = masque_value.get()
 
-            if not verif_ip_reseau(ip):
-                display_output([result_message["error"]["ipreseau"]], frameOutput)
+            if not verifIP(ip):
+                display_output([result_message["error"]["ip"]], frameOutput)
                 return
             if not verifMasque(masque):
                 display_output([result_message["error"]["masque"]], frameOutput)
