@@ -6,8 +6,8 @@ tab = {
     },
 
     "2": {
-        "IP invalid": "Cette IP n'est pas utilisable",
-        "masque invalid": "Ce masque n'est pas valide",
+        "IP invalid": "L'IP ne peut pas être de classe {}.\nSeul les IPS de classe A,B et C sont acceptées",
+        "masque invalid": "Le masque n'est pas un masque de classe {}",
         "broadcast": "L'adresse de broadcast du réseau est {}",
         "reseau": "L'adresse de réseau est {}",
         "sr": "L'adresse de sous-réseau est {}",

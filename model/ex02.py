@@ -39,10 +39,10 @@ def ex02(ip, masque):
 
     # On est bien en classe A, B ou C
     if classe["classe"] not in ["A", "B", "C"]:
-        return [result_message["IP invalid"]]
+        return [result_message["IP invalid"].format(classe["classe"])]
 
     # Le masque est valide par rapport à la classe de l'ip
-    if not valid_masque_for_classe(masque, classe["classe"]): return [result_message["masque invalid"]]
+    if not valid_masque_for_classe(masque, classe["classe"]): return [result_message["masque invalid"].format(classe["classe"])]
 
     # adresse de broadcast
     result.append(result_message["broadcast"].format(broadcast(ip, classe["masque"])))

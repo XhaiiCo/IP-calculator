@@ -1,6 +1,6 @@
 tab = [
     {
-        "classe": "réservées",
+        "classe": "réservée",
         "masque": "/",
         "reseaux": "/",
         "hotes": "/",
@@ -16,7 +16,7 @@ tab = [
         "ipMax": "126.255.255.255",
     },
     {
-        "classe": "réservées",
+        "classe": "réservée",
         "masque": "/",
         "reseaux": "/",
         "hotes": "/",
