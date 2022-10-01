@@ -1,6 +1,6 @@
 from tkinter import *
 from tkinter import ttk
-
+from tkinter import font as tkf
 from util import auth
 from view import app
 
@@ -19,10 +19,12 @@ def view(window):
     pwd_entry = ttk.Entry(loginframe, width=30, textvariable=pwd, show='*')
     pwd_entry.grid(column=2, row=2, sticky=W, pady=3)
 
-    ttk.Label(loginframe, text="Login").grid(column=1, row=1, sticky=W, pady=5)
-    ttk.Label(loginframe, text="Password").grid(column=1, row=2, sticky=W, padx=(0, 15))
+    fontLabel = tkf.Font(family='MS Sans Serif', size=11, weight="bold")
 
-    ttk.Button(loginframe, text="Log in", command=lambda: logIn(window, loginframe, login.get(), pwd.get(),
+    ttk.Label(loginframe, text="Nom d'utilisateur", font=fontLabel).grid(column=1, row=1, sticky=W, pady=5)
+    ttk.Label(loginframe, text="Mot de passe", font=fontLabel).grid(column=1, row=2, sticky=W, padx=(0, 15))
+
+    ttk.Button(loginframe, text="Se connecter", command=lambda: logIn(window, loginframe, login.get(), pwd.get(),
                                                                 login_entry, pwd_entry)).grid(column=2, row=3,
                                                                                               sticky=E, pady=3)
 
@@ -35,7 +37,7 @@ def logIn(window, loginframe, lblLogin, lblPassword, login_entry, pwd_entry):
     if auth.login(log, passw):
         app.main(window)
     else:
-        ttk.Label(loginframe, text="Mauvais login ou mot de passe !", foreground='red')\
+        ttk.Label(loginframe, text="Mauvais nom d'utilisateur ou mot de passe", foreground='red')\
             .grid(column=1, columnspan=2, row=3, sticky=W, padx=(0, 10))
 
         login_entry.delete(0, END)
