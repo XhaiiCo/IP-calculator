@@ -24,7 +24,9 @@ def verif_ip_reseau(ip):
         return False
 
     binary_ip = toBinary(ip)
-    if int(binary_ip.split('.')[-1]) != 0 and int(binary_ip.split('.')[-2]) != 0:
+    print(binary_ip)
+    array_last_bit = list(binary_ip.split('.')[-1])
+    if int(array_last_bit[-1]) == 1 or int(array_last_bit[-2]) == 1:
         return False
     return True
 

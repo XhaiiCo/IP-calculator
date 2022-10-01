@@ -12,6 +12,6 @@ class Test(unittest.TestCase):
 
     def test_ex03(self):
         result_message = message.tab["3"]
-        self.assertEqual(ex03("192.168.0.1", "255.255.0.0", "192.168.0.2"), [result_message["IP in"]])
-        self.assertEqual(ex03("192.168.0.1", "255.255.0.0", "192.169.0.2"), [result_message["IP out"]])
+        self.assertEqual(ex03("192.168.0.1", "255.255.0.0", "192.168.0.4"), [result_message["IP in"]])
+        self.assertEqual(ex03("192.168.0.1", "255.255.0.0", "192.169.0.4"), [result_message["IP out"]])
         self.assertEqual(ex03("192.168.0.1", "255.255.0.0", "192.169.0.1"), [message.tab["error"]["ipreseau"]])
