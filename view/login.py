@@ -13,11 +13,11 @@ def view(window):
 
     login = StringVar()
     login_entry = ttk.Entry(loginframe, width=30, textvariable=login)
-    login_entry.grid(column=2, row=1, sticky=W)
+    login_entry.grid(column=2, row=1, sticky=W, padx=(10, 0))
 
     pwd = StringVar()
     pwd_entry = ttk.Entry(loginframe, width=30, textvariable=pwd, show='*')
-    pwd_entry.grid(column=2, row=2, sticky=W, pady=3)
+    pwd_entry.grid(column=2, row=2, sticky=W, pady=3, padx=(10, 0))
 
     fontLabel = tkf.Font(family='MS Sans Serif', size=11, weight="bold")
 
