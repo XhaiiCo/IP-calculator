@@ -44,11 +44,11 @@ def ex02(ip, masque):
     # Le masque est valide par rapport à la classe de l'ip
     if not valid_masque_for_classe(masque, classe["classe"]): return [result_message["masque invalid"].format(classe["classe"])]
 
-    # adresse de broadcast
-    result.append(result_message["broadcast"].format(broadcast(ip, classe["masque"])))
-
     # Adresse du réseau
     result.append(result_message["reseau"].format(reseau(ip, classe["masque"])))
+
+    # adresse de broadcast
+    result.append(result_message["broadcast"].format(broadcast(ip, classe["masque"])))
 
     # Si adresse en sous-réseau
     if masque != classe["masque"]:
