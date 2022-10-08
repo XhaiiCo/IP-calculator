@@ -1,7 +1,6 @@
 import unittest
 
 from model.ex01 import find_class
-from model.ex02 import valid_masque_for_classe
 from util import classfull
 
 

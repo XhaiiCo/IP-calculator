@@ -6,7 +6,7 @@ tab = {
     },
 
     "2": {
-        "IP invalid": "L'IP ne peut pas être de classe {}.\nSeul les IPS de classe A,B et C sont acceptées",
+        "IP invalid": "L'IP ne peut pas être de classe {}.\nSeuls les IPS de classe A,B et C sont acceptées",
         "masque invalid": "Le masque n'est pas un masque de classe {}",
         "broadcast": "L'adresse de broadcast du réseau est {}",
         "reseau": "L'adresse de réseau est {}",
@@ -30,16 +30,16 @@ tab = {
         "hotes total": "Le nombre d'hotes total est de {}",
 
         "sousreseaux": {
-            "possible": "Il est possible de réaliser une découpe classique sur\nbase du nombre de sous réseaux, le nombre maximal\nd'hôtes par sous réseau est de {}",
-            "impossible": "Il n'est pas possible de réaliser une découpe\nclassique sur base du nombre de sous réseaux car le \nnombre de sous réseaux maximal est inférieur au nombre\nde sous réseau demandé",
+            "possible": "Il est possible de réaliser une découpe classique sur\nbase du nombre de sous-réseaux, le nombre maximal\nd'hôtes par sous réseau est de {}",
+            "impossible": "Il n'est pas possible de réaliser une découpe\nclassique sur base du nombre de sous-réseaux car le \nnombre de sous-réseaux maximal est inférieur au nombre\nde sous-réseaux demandés",
             "erreur": {
-                "<=0": "Le nombre de sous réseaux doit être possitif"
+                "<=0": "Le nombre de sous-réseaux doit être possitif"
             }
         },
 
         "hotes": {
-            "possible": "Le nombre maximal de sous réseaux pouvant\nêtre créés est de {}",
-            "impossible": "Il n'est pas possible de réaliser une découpe\nclassique sur base d'IP car le nombrede bit \nnécessaire à faire la découpe est insuffisant",
+            "possible": "Le nombre maximal de sous-réseaux pouvant\nêtre créés est de {}",
+            "impossible": "Il n'est pas possible de réaliser une découpe\nclassique sur base d'IP car le nombre de bits\nnécessaire pour faire la découpe est insuffisant",
             "erreur": {
                 "<=0": "Le nombre d'hotes doit être possitif"
             }
@@ -54,6 +54,6 @@ tab = {
     "error": {
         "ip": "Cette IP n'est pas valide",
         "masque": "Ce masque n'est pas valide",
-        "ipreseau": "L'ip n'est pas une ip de reseau"
+        "ipreseau": "L'IP n'est pas une IP de reseau"
     }
 }
